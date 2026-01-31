@@ -95,7 +95,6 @@ def match_resume(cv, job):
         job["soft_skills"]
     )
 
-    # 🔹 certificações relevantes
     matched_certs = score_certifications(
         cv.get("certifications", []),
         job["hard_skills"] + job["tools"]

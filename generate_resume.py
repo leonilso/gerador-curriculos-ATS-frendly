@@ -42,17 +42,13 @@ def main():
 
     vaga_url = sys.argv[1]
 
-    # 1️⃣ Carrega currículo
     with open("curriculo.json", encoding="utf-8") as f:
         cv = json.load(f)
 
-    # 2️⃣ Extrai requisitos da vaga chamando o analyzer
     job = run_analyzer(vaga_url)
 
-    # 3️⃣ Match
     match = match_resume(cv, job)
 
-    # 4️⃣ Gera currículo customizado
     build_docx(cv, match)
 
     print("Currículo gerado com sucesso!")

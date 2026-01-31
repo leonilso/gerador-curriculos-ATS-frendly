@@ -43,11 +43,13 @@ def build_docx(cv, match):
     for skill in match["matched_hard_skills"]: 
         doc.add_paragraph(f"• {skill}")
 
+    # ===== COMPETÊNCIAS: tecnologias =====
     if match["matched_technologies"]:
         p = doc.add_paragraph()
         p.add_run("Tecnologias: ").bold = True
         p.add_run(", ".join(match["matched_technologies"]))
 
+    # ===== COMPETÊNCIAS: ferramentas =====
     if match["matched_tools"]:
         p = doc.add_paragraph()
         p.add_run("Ferramentas: " ).bold = True

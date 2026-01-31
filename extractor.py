@@ -44,29 +44,24 @@ TOOLS = [
 ]
 def clean_text(text):
     
-    # 2. Garante que é string (caso venha um número ou outro objeto)
     text = str(text)
 
-    # 3. Executa a limpeza
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
 def extract_job_title(html: str) -> str | None:
     soup = BeautifulSoup(html, "html.parser")
 
-    # 1️⃣ H1 — fonte principal
     h1 = soup.find("h1")
     if h1:
         title = h1.get_text(strip=True)
         if len(title) > 3:
             return title
 
-    # 2️⃣ og:title — fallback simples
     og = soup.find("meta", property="og:title")
     if og and og.get("content"):
         return og["content"].split("|")[0].strip()
 
-    # 3️⃣ Title tag — último recurso
     if soup.title and soup.title.string:
         return soup.title.string.split("|")[-1].strip()
 
@@ -83,18 +78,17 @@ def extract_from_json_ld(soup):
         try:
             if not script.string: continue
             data = json.loads(script.string)
-            
-            # Às vezes o JSON-LD é uma lista
+
             if isinstance(data, list):
                 for item in data:
                     if item.get('@type') == 'JobPosting':
                         return item.get('title')
             
-            # Ou um objeto único
+
             elif isinstance(data, dict):
                 if data.get('@type') == 'JobPosting':
                     return data.get('title')
-                # Às vezes está dentro de @graph
+
                 if '@graph' in data:
                     for item in data['@graph']:
                         if item.get('@type') == 'JobPosting':
