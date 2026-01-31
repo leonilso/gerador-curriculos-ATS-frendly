@@ -1,0 +1,72 @@
+{
+  "profile": {
+    "name": null,
+    "label": null,
+    "email": null,
+    "phone": null,
+    "location": {
+      "city": null,
+      "state": null,
+      "country": null,
+      "address": null
+    },
+    "urls": {
+      "website": null,
+      "linkedin": null,
+      "github": null
+    }
+  },
+  "objectives": [],
+  "summary": null,
+  "skills": {
+    "hard_skills": [],
+    "technologies": [],
+    "soft_skills": [],
+    "languages": [
+      {
+        "language": null,
+        "fluency": null
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": null,
+      "area": null,
+      "startDate": null,
+      "endDate": null,
+      "description": null
+    }
+  ],
+  "experience": [
+    {
+      "company": null,
+      "position": null,
+      "startDate": null,
+      "endDate": null,
+      "description": null
+    }
+  ],
+  "projects": [
+    {
+      "title": null,
+      "techStack": [],
+      "description": null,
+      "url": null
+    }
+  ],
+  "certifications": [
+    {
+      "name": null,
+      "issuer": null,
+      "date": null
+    }
+  ],
+  "awards": [
+    {
+      "title": null,
+      "date": null,
+      "description": null
+    }
+  ]
+}
