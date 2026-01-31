@@ -1,0 +1,5 @@
+/curriculos
+/scrapper_vagas
+fetch_job_html.py
+curriculo.json
+/__pycache__

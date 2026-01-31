@@ -1,0 +1,6 @@
+beautifulsoup4==4.14.3
+docx==0.2.4
+playwright==1.58.0
+python_docx==1.1.2
+rapidfuzz==3.14.3
+Requests==2.32.5
