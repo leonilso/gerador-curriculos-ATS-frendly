@@ -2,6 +2,7 @@ import argparse
 import sys
 import json
 from extractor import extract_requirements
+import re
 
 
 def fetch_with_playwright(url: str) -> str:
@@ -72,6 +73,9 @@ def read_input(args):
     raise ValueError("Forneça --file, --url, --text ou stdin")
 
 
+def remove_emojis(text):
+    return re.sub(r'[^\x00-\x7F]+', '', text)
+
 def main():
     parser = argparse.ArgumentParser(
         description="Extrator de requisitos de vagas (ATS-friendly)"
@@ -84,6 +88,8 @@ def main():
     args = parser.parse_args()
 
     content, is_html = read_input(args)
+
+    content = remove_emojis(content)
 
     result = extract_requirements(content, is_html=is_html)
 

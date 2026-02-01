@@ -112,5 +112,5 @@ def build_docx(cv, match):
     )
     doc.add_paragraph(langs_line)
 
-    output = f"curriculos/curriculo_{match['title']}.docx"
+    output = f"curriculos/curriculo_{match['title'].replace("/", "").replace(".", "")}.docx"
     doc.save(output)
