@@ -28,7 +28,7 @@ melhorando a indexação de palavras-chave e facilitando a adaptação do currí
 ---
 
 ## 📂 Estrutura do Projeto
-- Arquivos responsáveis pela coleta e organização dos dados do currículo (curriculo-exemplo.json)
+- Arquivos responsáveis pela coleta e organização dos dados do currículo (`curriculo-exemplo.json`)
 - Scripts de geração e formatação do conteúdo
 - Saída estruturada em DOCX
 
@@ -36,12 +36,12 @@ melhorando a indexação de palavras-chave e facilitando a adaptação do currí
 
 ## ⚙️ Como Utilizar
 1. Clone o repositório
-2. Preencha os dados do currículo conforme o formato esperado e altere seu nome para "curriculo.json"
+2. Preencha os dados do currículo conforme o formato esperado e altere seu nome para `curriculo.json`
 3. É necessário ter o python instalado
 4. instale as dependências com:
 `pip install -r requirements.txt`
 5. No arquivo "llm_adapter.py" é utilizado o ollama CLI com o modelo llama3.1:8b é possível usar outro modelo/API, mas precisa de adaptação no código
-6. Execute o script principal --> python generate_resume.py <url_vaga>
+6. Execute o script principal --> `python generate_resume.py <url_vaga>`
 7. Uma pasta chamada curriculo será criada com um arquivo curriculo_<nome_vaga>.docx será gerado
 
 ---
